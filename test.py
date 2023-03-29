@@ -10,7 +10,7 @@ data = pd.read_csv('Cleaned_data.csv')
 pipe =pickle.load(open('RegressorModel.pkl', 'rb'))
 
 @app.route('/')
-def index():
+def index(): 
     locations = sorted(data['location'].unique())
     return render_template("index.html", locations= locations)
 
