@@ -79,5 +79,5 @@ urllib3==1.26.15
     #   requests
 werkzeug==2.2.3
     # via flask
-xgboost==1.7.1
+# xgboost==1.7.1
     # via -r requirements.in
