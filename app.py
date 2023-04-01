@@ -14,11 +14,6 @@ def index():
     locations = sorted(data['location'].unique())
     return render_template("index.html", locations= locations)
 
-# @app.route('/predict', methods=['POST','GET'])
-# def predict():
-#     features = [float(x) for x in request.form.values()]
-#     prediction = model.predict([features])[0]
-#     return render_template('index.html', prediction=prediction)
 @app.route('/predict', methods=['POST'])
 def predict():
     location = request.form.get("location")
