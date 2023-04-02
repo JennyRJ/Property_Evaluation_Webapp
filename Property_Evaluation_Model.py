@@ -208,12 +208,14 @@ y=dataset['Price']
 
 
 from sklearn.model_selection import train_test_split
-from sklearn.linear_model import LinearRegression,Lasso,Ridge
+from sklearn.linear_model import Lasso,Ridge
 from xgboost import XGBRegressor
-from sklearn.preprocessing import OneHotEncoder,StandardScaler
+from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import make_column_transformer
 from sklearn.pipeline import make_pipeline
 from sklearn.metrics import r2_score
+from sklearn.linear_model import LinearRegression
+from sklearn.preprocessing import StandardScaler
 
 
 # In[34]:
@@ -246,7 +248,7 @@ scaler=StandardScaler()
 # In[38]:
 
 
-lr=LinearRegression(normalize=True)
+lr=LinearRegression()
 
 
 # In[39]:
@@ -339,7 +341,7 @@ print('Ridge: ',r2_score(y_test,y_pred_ridge))
 pickle.dump(pipe, open('RegressorModel.pkl','wb'))
 
 
-# In[56]:
+# In[53]:
 
 
 pipe.predict(pd.DataFrame([["Parklands, Westlands","3000","3","3"]],columns=['location','total_sqft','Bedrooms','Bathrooms']))
